@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Generator</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f5f5f5;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+    }
+    .card {
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Create Your Portfolio</h1>
+
+  <input type="text" id="name" placeholder="Enter your name"><br>
+  <input type="text" id="bio" placeholder="Enter your bio"><br>
+  <input type="text" id="skills" placeholder="Enter your skills"><br>
+
+  <button onclick="generate()">Generate</button>
+
+  <div id="output"></div>
+</div>
+
+<script>
+function generate() {
+  let name = document.getElementById("name").value;
+  let bio = document.getElementById("bio").value;
+  let skills = document.getElementById("skills").value;
+
+  document.getElementById("output").innerHTML = `
+    <div class="card">
+      <h2>${name}</h2>
+      <p>${bio}</p>
+      <h3>Skills</h3>
+      <p>${skills}</p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
